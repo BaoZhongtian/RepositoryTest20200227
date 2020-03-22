@@ -66,7 +66,7 @@ def TrainTemplate_FluctuateLength_Regression(Model, trainDataset, testDataset, s
         print('\nL1 Distance = %.2f' % (numpy.average(numpy.abs(numpy.subtract(testPredict, testLabel)))))
 
 
-def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDataset, savePath, weight, cudaFlag=True,
+def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDataset, savePath, weight=None, cudaFlag=True,
                                                  saveFlag=True, learningRate=1E-3, episodeNumber=100):
     if os.path.exists(savePath): return
     os.makedirs(savePath)
@@ -75,9 +75,13 @@ def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDatase
     print(Model)
     if cudaFlag: Model.cuda()
     optimizer = torch.optim.Adam(params=Model.parameters(), lr=learningRate)
-    weightTensor = torch.FloatTensor(weight)
-    if cudaFlag: weightTensor = weightTensor.cuda()
-    lossFunction = torch.nn.CrossEntropyLoss(weight=weightTensor)
+
+    if weight is not None:
+        weightTensor = torch.FloatTensor(weight)
+        if cudaFlag: weightTensor = weightTensor.cuda()
+        lossFunction = torch.nn.CrossEntropyLoss(weight=weightTensor)
+    else:
+        lossFunction = torch.nn.CrossEntropyLoss()
 
     for episode in range(episodeNumber):
         episodeLoss = 0.0

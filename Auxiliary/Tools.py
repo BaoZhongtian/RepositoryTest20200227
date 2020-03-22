@@ -1,4 +1,16 @@
 import torch
+import numpy
+
+
+def UA_Calculation(matrix):
+    return (matrix[0][0] / numpy.sum(matrix[0]) + matrix[1][1] / numpy.sum(matrix[1])) / 2
+
+
+def F1Score_Calculation(matrix):
+    precision = matrix[0][0] / numpy.sum(matrix[0])
+    recall = matrix[0][0] / (matrix[0][0] + matrix[1][0])
+    if precision + recall == 0: return 0
+    return 2 * precision * recall / (precision + recall)
 
 
 def SaveNetwork(model, optimizer, savePath):

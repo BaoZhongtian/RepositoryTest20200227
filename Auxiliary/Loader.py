@@ -63,57 +63,32 @@ class Dataset_General(torch_utils_data.Dataset):
         return self.data[index], self.label[index]
 
 
-def Loader_Audio(batchSize=32, multiply=10, appointEmotion=-1):
+def Loader_Audio(batchSize=32):
     loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Audio/'
     trainData = numpy.load(file=os.path.join(loadPath, 'Train-Data.npy'), allow_pickle=True).tolist()
-    trainLabel = (numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True) * multiply)
+    trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True).tolist()
     validData = numpy.load(file=os.path.join(loadPath, 'Valid-Data.npy'), allow_pickle=True).tolist()
-    validLabel = (numpy.load(file=os.path.join(loadPath, 'Valid-Label.npy'), allow_pickle=True) * multiply)
+    validLabel = numpy.load(file=os.path.join(loadPath, 'Valid-Label.npy'), allow_pickle=True).tolist()
     testData = numpy.load(file=os.path.join(loadPath, 'Test-Data.npy'), allow_pickle=True).tolist()
-    testLabel = (numpy.load(file=os.path.join(loadPath, 'Test-Label.npy'), allow_pickle=True) * multiply)
+    testLabel = numpy.load(file=os.path.join(loadPath, 'Test-Label.npy'), allow_pickle=True).tolist()
 
-    if appointEmotion != -1:
-        trainLabel = trainLabel[:, appointEmotion]
-        validLabel = validLabel[:, appointEmotion]
-        testLabel = testLabel[:, appointEmotion]
-
-    trainLabel, validLabel, testLabel = trainLabel.tolist(), validLabel.tolist(), testLabel.tolist()
     print(numpy.shape(trainData), numpy.shape(trainLabel), numpy.shape(validData), numpy.shape(validLabel),
           numpy.shape(testData), numpy.shape(testLabel))
+    print(numpy.sum(trainLabel), numpy.sum(validLabel), numpy.sum(testLabel))
 
     trainData.extend(validData)
     trainLabel.extend(validLabel)
-    if appointEmotion == -1:
-        trainDataset = Dataset_General(data=trainData, label=trainLabel)
-        testDataset = Dataset_General(data=testData, label=testLabel)
-        return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
-                                           collate_fn=Collate_FluctuateLen_Regression()), \
-               torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
-                                           collate_fn=Collate_FluctuateLen_Regression())
-    else:
-        trainCurrentLabel, testCurrentLabel = [], []
-        for index in range(numpy.shape(trainLabel)[0]):
-            if trainLabel[index] > 0:
-                trainCurrentLabel.append(1)
-            else:
-                trainCurrentLabel.append(0)
-        for index in range(numpy.shape(testLabel)[0]):
-            if testLabel[index] > 0:
-                testCurrentLabel.append(1)
-            else:
-                testCurrentLabel.append(0)
-        print(numpy.sum(trainCurrentLabel), numpy.sum(testCurrentLabel))
 
-        trainDataset = Dataset_General(data=trainData, label=trainCurrentLabel)
-        testDataset = Dataset_General(data=testData, label=testCurrentLabel)
-        return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
-                                           collate_fn=Collate_FluctuateLen_Classification()), \
-               torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
-                                           collate_fn=Collate_FluctuateLen_Classification())
+    trainDataset = Dataset_General(data=trainData, label=trainLabel)
+    testDataset = Dataset_General(data=testData, label=testLabel)
+    return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
+                                       collate_fn=Collate_FluctuateLen_Regression()), \
+           torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_FluctuateLen_Regression())
 
 
 if __name__ == '__main__':
-    trainDataset, testDataset = Loader_Audio(appointEmotion=1)
+    trainDataset, testDataset = Loader_Audio()
     for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
         print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
         print(batchLabel)

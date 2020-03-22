@@ -4,14 +4,14 @@ from pydub import AudioSegment
 
 if __name__ == '__main__':
     audioPath = 'D:/PythonProjects_Data/CMU_MOSEI/WAV_16000/'
-    labelPath = 'D:/PythonProjects_Data/CMU_MOSEI/Step1_StartEndCut_Emotion/'
+    labelPath = 'D:/PythonProjects_Data/CMU_MOSEI/Step1_StartEndCut/'
     savePath = 'D:/PythonProjects_Data/CMU_MOSEI/Step2_AudioCut/'
     if not os.path.exists(savePath): os.makedirs(savePath)
 
     for fileName in os.listdir(labelPath):
         print('Treating', fileName)
         startEndTicket = numpy.reshape(
-            numpy.genfromtxt(fname=os.path.join(labelPath, fileName), dtype=float, delimiter=','), [-1, 8])
+            numpy.genfromtxt(fname=os.path.join(labelPath, fileName), dtype=float, delimiter=','), [-1, 3])
         wavFile = AudioSegment.from_file(file=os.path.join(audioPath, fileName.replace('csv', 'wav')))
 
         for counter in range(numpy.shape(startEndTicket)[0]):
