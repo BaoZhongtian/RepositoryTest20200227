@@ -6,6 +6,10 @@ def UA_Calculation(matrix):
     return (matrix[0][0] / numpy.sum(matrix[0]) + matrix[1][1] / numpy.sum(matrix[1])) / 2
 
 
+def Accuracy_Calculation(matrix):
+    return (matrix[0][0] + matrix[1][1]) / numpy.sum(matrix)
+
+
 def F1Score_Calculation(matrix):
     precision = matrix[0][0] / numpy.sum(matrix[0])
     recall = matrix[0][0] / (matrix[0][0] + matrix[1][0])
