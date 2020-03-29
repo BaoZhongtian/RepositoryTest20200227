@@ -8,7 +8,7 @@ if __name__ == '__main__':
     if not os.path.exists(savePath): os.makedirs(savePath)
     originData = h5py.File(name=r'D:\PythonProjects_Data\CMU_MOSEI\CMU_MOSEI_VisualFacet42.csd', mode='r')
 
-    # for sample in originData['FACET 4.2/data/zx4W0Vuus-I']:
+    # for sample in originData:
     #     print(sample)
 
     for fileName in os.listdir(labelPath)[3::4]:

@@ -4,7 +4,7 @@ import matplotlib.pylab as plt
 from Auxiliary.Tools import UA_Calculation, Accuracy_Calculation, F1Score_Calculation
 
 if __name__ == '__main__':
-    loadPath = r'D:\PythonProjects_Data\CMU_MOSEI_Result\BLSTM-W-ComponentAttention-10-TestResult'
+    loadPath = r'D:\PythonProjects_Data\CMU_MOSEI_Video_Facet_Result\BLSTM-W-MonotonicAttention-10-TestResult'
     resultLine = []
     for fileName in os.listdir(loadPath):
         data = numpy.genfromtxt(fname=os.path.join(loadPath, fileName), dtype=float, delimiter=',')

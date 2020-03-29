@@ -111,6 +111,32 @@ def Loader_Video(appointPart, batchSize=32):
                                        collate_fn=Collate_FluctuateLen_Regression())
 
 
+def Loader_Total(appointPart, batchSize=32):
+    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Transform_Data_%s/' % appointPart
+    trainData = numpy.load(file=os.path.join(loadPath, 'Train-Data.npy'), allow_pickle=True).tolist()
+    trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True).tolist()
+    validData = numpy.load(file=os.path.join(loadPath, 'Valid-Data.npy'), allow_pickle=True).tolist()
+    validLabel = numpy.load(file=os.path.join(loadPath, 'Valid-Label.npy'), allow_pickle=True).tolist()
+    testData = numpy.load(file=os.path.join(loadPath, 'Test-Data.npy'), allow_pickle=True).tolist()
+    testLabel = numpy.load(file=os.path.join(loadPath, 'Test-Label.npy'), allow_pickle=True).tolist()
+
+    print(numpy.shape(trainData), numpy.shape(trainLabel), numpy.shape(validData), numpy.shape(validLabel),
+          numpy.shape(testData), numpy.shape(testLabel))
+    print(numpy.sum(trainLabel), numpy.sum(validLabel), numpy.sum(testLabel))
+
+    trainData.extend(validData)
+    trainLabel.extend(validLabel)
+
+    trainDataset = Dataset_General(data=trainData, label=trainLabel)
+    testDataset = Dataset_General(data=testData, label=testLabel)
+    return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
+                                       collate_fn=Collate_FluctuateLen_Regression()), \
+           torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_FluctuateLen_Regression()), \
+           torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_FluctuateLen_Regression())
+
+
 if __name__ == '__main__':
     trainDataset, testDataset = Loader_Video(appointPart='Facet')
     for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
