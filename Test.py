@@ -1,11 +1,13 @@
-import os
 import numpy
+from Auxiliary.Loader import Loader_Total
 
-loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Audio/'
-trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True)
-
-# counter = 0
-# for sample in trainLabel:
-#     if sample[3] < 0: counter += 1
-# print(counter)
-print(numpy.min(trainLabel, axis=0))
+if __name__ == '__main__':
+    trainAttentionHotMap = numpy.load(
+        r'D:\PythonProjects_Data\AttentionHotMap\Video\StandardAttention\TrainAttentionHotMap.npy',
+        allow_pickle=True)
+    trainDataset, frozenDataset, testDataset = Loader_Total(appointPart='Audio', batchSize=1)
+    counter = 0
+    for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(frozenDataset):
+        print(batchNumber, numpy.shape(batchData), batchSeq, numpy.shape(trainAttentionHotMap[counter]))
+        counter += 1
+        if counter == 10: break
