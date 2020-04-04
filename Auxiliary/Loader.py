@@ -5,8 +5,9 @@ from torch.utils import data as torch_utils_data
 
 
 class Collate_FluctuateLen_Regression:
-    def __init__(self, labelPadding=False):
+    def __init__(self, labelPadding=False, dimensionOneFlag=False):
         self.labelPadding = labelPadding
+        self.dimensionOneFlag = dimensionOneFlag
 
     def __DataTensor(self, dataInput, maxLen):
         return numpy.concatenate([dataInput, torch.zeros([maxLen - len(dataInput), numpy.shape(dataInput)[1]],
@@ -20,7 +21,10 @@ class Collate_FluctuateLen_Regression:
         ys = torch.FloatTensor([v[1] for v in batch])
         seq_lengths = torch.LongTensor([v for v in map(len, xs)])
         max_len = max([len(v) for v in xs])
-        xs = numpy.array([self.__DataTensor(dataInput=v, maxLen=max_len) for v in xs], dtype=float)
+        if self.dimensionOneFlag:
+            xs = numpy.array([self.__LabelTensor(dataInput=v, maxLen=max_len) for v in xs], dtype=float)
+        else:
+            xs = numpy.array([self.__DataTensor(dataInput=v, maxLen=max_len) for v in xs], dtype=float)
         xs = torch.from_numpy(xs)
         return xs, seq_lengths, ys
 
@@ -90,7 +94,8 @@ class Collate_AttentionTransform:
         currentData = torch.from_numpy(currentData)
 
         max_len = max([len(v) for v in currentMap])
-        currentMap = numpy.array([self.__AttentionMapTensor(dataInput=v, maxLen=max_len) for v in currentMap], dtype=float)
+        currentMap = numpy.array([self.__AttentionMapTensor(dataInput=v, maxLen=max_len) for v in currentMap],
+                                 dtype=float)
         currentMap = torch.from_numpy(currentMap)
 
         return currentData, seq_lengths, currentLabel, currentMap
@@ -135,6 +140,30 @@ def Loader_Audio(batchSize=32):
                                        collate_fn=Collate_FluctuateLen_Regression()), \
            torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
                                        collate_fn=Collate_FluctuateLen_Regression())
+
+
+def Loader_Text(batchSize=32):
+    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Text/'
+    trainData = numpy.load(file=os.path.join(loadPath, 'Train-Data.npy'), allow_pickle=True).tolist()
+    trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True).tolist()
+    validData = numpy.load(file=os.path.join(loadPath, 'Valid-Data.npy'), allow_pickle=True).tolist()
+    validLabel = numpy.load(file=os.path.join(loadPath, 'Valid-Label.npy'), allow_pickle=True).tolist()
+    testData = numpy.load(file=os.path.join(loadPath, 'Test-Data.npy'), allow_pickle=True).tolist()
+    testLabel = numpy.load(file=os.path.join(loadPath, 'Test-Label.npy'), allow_pickle=True).tolist()
+
+    print(numpy.shape(trainData), numpy.shape(trainLabel), numpy.shape(validData), numpy.shape(validLabel),
+          numpy.shape(testData), numpy.shape(testLabel))
+    print(numpy.sum(trainLabel), numpy.sum(validLabel), numpy.sum(testLabel))
+
+    trainData.extend(validData)
+    trainLabel.extend(validLabel)
+
+    trainDataset = Dataset_General(data=trainData, label=trainLabel)
+    testDataset = Dataset_General(data=testData, label=testLabel)
+    return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
+                                       collate_fn=Collate_FluctuateLen_Regression(dimensionOneFlag=True)), \
+           torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_FluctuateLen_Regression(dimensionOneFlag=True))
 
 
 def Loader_Video(appointPart, batchSize=32):
@@ -219,8 +248,8 @@ def Loader_AttentionTransform(appointPart, appointAttention, batchSize=32):
 
 
 if __name__ == '__main__':
-    trainDataset, testDataset = Loader_AttentionTransform(appointPart='Audio', appointAttention='StandardAttention')
-    for batchNumber, (batchData, batchSeq, batchLabel, batchMap) in enumerate(trainDataset):
-        print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel), numpy.shape(batchMap))
+    trainDataset, testDataset = Loader_Text()
+    for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
+        print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
         # print(batchLabel)
         # exit()

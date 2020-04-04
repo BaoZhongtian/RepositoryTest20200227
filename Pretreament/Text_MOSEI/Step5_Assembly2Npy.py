@@ -2,23 +2,18 @@ import os
 import numpy
 
 if __name__ == '__main__':
-    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step4EX_Normalization/'
+    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/TextPart/Step4_SeparateFold/'
     labelPath = 'D:/PythonProjects_Data/CMU_MOSEI/Step1_StartEndCut/'
-    savePath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Video_EX/'
+    savePath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Text/'
     if not os.path.exists(savePath): os.makedirs(savePath)
 
     for part in os.listdir(dataPath):
         totalData, totalLabel = [], []
         for fileName in os.listdir(os.path.join(dataPath, part)):
             print(part, fileName)
-            currentData = numpy.reshape(
-                numpy.genfromtxt(fname=os.path.join(dataPath, part, fileName), dtype=float, delimiter=','), [-1, 35])
-            # currentData = numpy.genfromtxt(fname=os.path.join(dataPath, part, fileName), dtype=float, delimiter=',')
-            # print(numpy.shape(currentData))
-            # exit()
-
+            currentData = numpy.genfromtxt(fname=os.path.join(dataPath, part, fileName), dtype=int, delimiter=',')[0:-1]
             currentLabel = numpy.reshape(
-                numpy.genfromtxt(fname=os.path.join(labelPath, fileName[:-6] + '.csv'), dtype=float,
+                numpy.genfromtxt(fname=os.path.join(labelPath, fileName[:-7] + '.csv'), dtype=float,
                                  delimiter=','), [-1, 3])
 
             counter = int(fileName[-6:-4])

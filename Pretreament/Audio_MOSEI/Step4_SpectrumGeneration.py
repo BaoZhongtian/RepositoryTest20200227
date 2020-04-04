@@ -5,8 +5,8 @@ import numpy
 
 if __name__ == '__main__':
     m_bands = 40
-    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step3_SeparateFold/test/'
-    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step4_SpectrumGeneration/test/'
+    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step3_SeparateFold/valid/'
+    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step4_SpectrumGeneration/valid/'
     os.makedirs(savepath)
 
     s_rate = 16000

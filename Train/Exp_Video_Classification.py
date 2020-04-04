@@ -4,7 +4,7 @@ from Model.BLSTMwAttention_Classification import BLSTMwAttention_ClassificationS
 
 if __name__ == '__main__':
     cudaFlag = True
-    trainDataset, testDataset = Loader_Video(appointPart='Facet', batchSize=16)
+    trainDataset, testDataset = Loader_Video(appointPart='EX', batchSize=16)
     for attentionName in ['StandardAttention', 'LocalAttention', 'ComponentAttention', 'MonotonicAttention']:
         Model = BLSTMwAttention_ClassificationSingle(attentionName=attentionName, attentionScope=10,
                                                      featuresNumber=35, classNumber=2, cudaFlag=cudaFlag)
