@@ -3,8 +3,8 @@ import numpy
 from sklearn.preprocessing import scale
 
 if __name__ == '__main__':
-    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step3EX_SeparateFold/'
-    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step4EX_Normalization/'
+    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step3SAME_SeparateFold_EX/'
+    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step4SAME_Normalization/'
 
     totalData = []
 

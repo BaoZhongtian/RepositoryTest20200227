@@ -24,7 +24,7 @@ def TrainTemplate_FluctuateLength_Regression(Model, trainDataset, testDataset, s
                     batchSeq = batchSeq.cuda()
                     batchLabel = batchLabel.cuda()
                 # print(episode, numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-                result, attentionHotMap = Model(inputData=batchData, inputSeqLen=batchSeq)
+                result, attentionHotMap, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
                 loss = lossFunction(input=result, target=batchLabel).cpu()
 
                 file.write(str(loss.data.numpy()) + '\n')
@@ -50,7 +50,7 @@ def TrainTemplate_FluctuateLength_Regression(Model, trainDataset, testDataset, s
                 batchSeq = batchSeq.cuda()
             testLabel.extend(batchLabel.numpy())
 
-            result, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
+            result, _, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
             result = result.cpu().detach().numpy()
             testPredict.extend(result)
             print('\rTesting %d' % batchNumber, end='')
@@ -92,7 +92,7 @@ def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDatase
                     batchSeq = batchSeq.cuda()
                     batchLabel = batchLabel.cuda()
                 # print(episode, numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-                result, attentionHotMap = Model(inputData=batchData, inputSeqLen=batchSeq)
+                result, attentionHotMap, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
                 loss = lossFunction(input=result, target=batchLabel.long()).cpu()
 
                 file.write(str(loss.data.numpy()) + '\n')
@@ -118,7 +118,7 @@ def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDatase
                 batchSeq = batchSeq.cuda()
             testLabel.extend(batchLabel.numpy())
 
-            result, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
+            result, _, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
             result = result.cpu().detach().numpy()
             testPredict.extend(result)
             print('\rTesting %d' % batchNumber, end='')
@@ -157,7 +157,7 @@ def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset
                     batchSeq = batchSeq.cuda()
                     batchLabel = batchLabel.cuda()
                 # print(episode, numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-                result, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
+                result, _, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
                 loss = lossFunction(input=result, target=batchLabel.long()).cpu()
 
                 file.write(str(loss.data.numpy()) + '\n')
@@ -182,7 +182,7 @@ def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset
                 batchData = batchData.cuda()
                 batchSeq = batchSeq.cuda()
 
-            _, attentionHotMap = Model(inputData=batchData, inputSeqLen=batchSeq)
+            _, attentionHotMap, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
             attentionHotMap = attentionHotMap.cpu().detach().numpy()
 
             for index in range(numpy.shape(batchData)[0]):
@@ -194,7 +194,7 @@ def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset
                 batchData = batchData.cuda()
                 batchSeq = batchSeq.cuda()
 
-            _, attentionHotMap = Model(inputData=batchData, inputSeqLen=batchSeq)
+            _, attentionHotMap, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
             attentionHotMap = attentionHotMap.cpu().detach().numpy()
 
             for index in range(numpy.shape(batchData)[0]):
@@ -206,8 +206,7 @@ def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset
 
 
 def TrainTemplate_AttentionTransform(Model, trainDataset, testDataset, savePath, attentionWeight, weight=None,
-                                     cudaFlag=True,
-                                     saveFlag=True, learningRate=1E-3, episodeNumber=100):
+                                     cudaFlag=True, saveFlag=True, learningRate=1E-3, episodeNumber=100):
     if os.path.exists(savePath): return
     os.makedirs(savePath)
     os.makedirs(savePath + '-TestResult')
@@ -235,7 +234,7 @@ def TrainTemplate_AttentionTransform(Model, trainDataset, testDataset, savePath,
                     anotherMap = anotherMap.cuda()
                 anotherMap = anotherMap.view([numpy.shape(anotherMap)[0], numpy.shape(anotherMap)[1], 1]).float()
                 # print(episode, numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-                result, attentionHotMap = Model(inputData=batchData, inputSeqLen=batchSeq)
+                result, attentionHotMap, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
 
                 # print(numpy.shape(attentionHotMap))
                 # exit()

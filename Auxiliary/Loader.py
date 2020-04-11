@@ -143,7 +143,7 @@ def Loader_Audio(batchSize=32):
 
 
 def Loader_Text(batchSize=32):
-    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Text/'
+    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Text_EX/'
     trainData = numpy.load(file=os.path.join(loadPath, 'Train-Data.npy'), allow_pickle=True).tolist()
     trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True).tolist()
     validData = numpy.load(file=os.path.join(loadPath, 'Valid-Data.npy'), allow_pickle=True).tolist()
@@ -217,7 +217,7 @@ def Loader_Total(appointPart, batchSize=32):
 
 
 def Loader_AttentionTransform(appointPart, appointAttention, batchSize=32):
-    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Transform_Data_%s/' % appointPart
+    loadPath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_%s_EX/' % appointPart
     trainData = numpy.load(file=os.path.join(loadPath, 'Train-Data.npy'), allow_pickle=True).tolist()
     trainLabel = numpy.load(file=os.path.join(loadPath, 'Train-Label.npy'), allow_pickle=True).tolist()
     validData = numpy.load(file=os.path.join(loadPath, 'Valid-Data.npy'), allow_pickle=True).tolist()
@@ -228,16 +228,19 @@ def Loader_AttentionTransform(appointPart, appointAttention, batchSize=32):
     print(numpy.shape(trainData), numpy.shape(trainLabel), numpy.shape(validData), numpy.shape(validLabel),
           numpy.shape(testData), numpy.shape(testLabel))
     print(numpy.sum(trainLabel), numpy.sum(validLabel), numpy.sum(testLabel))
-
+    # exit()
     trainData.extend(validData)
     trainLabel.extend(validLabel)
 
-    if appointPart == 'Audio': attentionPath = 'D:/PythonProjects_Data/AttentionHotMap/Video/%s/' % appointAttention
-    if appointPart == 'Video': attentionPath = 'D:/PythonProjects_Data/AttentionHotMap/Audio/%s/' % appointAttention
+    if appointPart == 'Audio': attentionPath = 'D:/PythonProjects_Data/CMU_MOSEI_Result/AttentionHotMap/Video/%s/' % appointAttention
+    if appointPart == 'Video': attentionPath = 'D:/PythonProjects_Data/CMU_MOSEI_Result/AttentionHotMap/Audio/%s/' % appointAttention
 
     trainAttentionHotMap = numpy.load(file=os.path.join(attentionPath, 'TrainAttentionHotMap.npy'), allow_pickle=True)
     testAttentionHotMap = numpy.load(file=os.path.join(attentionPath, 'TestAttentionHotMap.npy'), allow_pickle=True)
-
+    print(numpy.shape(trainAttentionHotMap), numpy.shape(testAttentionHotMap))
+    for index in range(10):
+        print(numpy.shape(trainData[index]), numpy.shape(trainAttentionHotMap[index]))
+    exit()
     trainDataset = Dataset_AttentionTransform(data=trainData, label=trainLabel, attentionHotMap=trainAttentionHotMap)
     testDataset = Dataset_AttentionTransform(data=testData, label=testLabel, attentionHotMap=testAttentionHotMap)
 
@@ -248,8 +251,8 @@ def Loader_AttentionTransform(appointPart, appointAttention, batchSize=32):
 
 
 if __name__ == '__main__':
-    trainDataset, testDataset = Loader_Text()
-    for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
-        print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-        # print(batchLabel)
-        # exit()
+    Loader_AttentionTransform(appointPart='Video', appointAttention='StandardAttention')
+    # for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
+    #     print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
+    #     # print(batchLabel)
+    #     # exit()

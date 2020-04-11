@@ -3,8 +3,8 @@ import numpy
 from sklearn.preprocessing import scale
 
 if __name__ == '__main__':
-    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step4EX_SpectrumGeneration/'
-    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step5EX_Normalization/'
+    loadpath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step4SAME_SpectrumGeneration/'
+    savepath = 'D:/PythonProjects_Data/CMU_MOSEI/AudioPart/Step5SAME_Normalization/'
 
     totalData = []
 

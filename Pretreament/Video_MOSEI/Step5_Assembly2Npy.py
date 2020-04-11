@@ -2,7 +2,7 @@ import os
 import numpy
 
 if __name__ == '__main__':
-    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step4EX_Normalization/'
+    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/VideoPart/Step4SAME_Normalization/'
     labelPath = 'D:/PythonProjects_Data/CMU_MOSEI/Step1_StartEndCut/'
     savePath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Video_EX/'
     if not os.path.exists(savePath): os.makedirs(savePath)
@@ -18,7 +18,7 @@ if __name__ == '__main__':
             # exit()
 
             currentLabel = numpy.reshape(
-                numpy.genfromtxt(fname=os.path.join(labelPath, fileName[:-6] + '.csv'), dtype=float,
+                numpy.genfromtxt(fname=os.path.join(labelPath, fileName[:-7] + '.csv'), dtype=float,
                                  delimiter=','), [-1, 3])
 
             counter = int(fileName[-6:-4])

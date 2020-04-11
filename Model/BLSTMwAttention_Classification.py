@@ -18,7 +18,7 @@ class BLSTMwAttention_ClassificationSingle(AttentionBase):
         attentionResult, attentionHotMap = self.ApplyAttention(
             dataInput=rnnOutput, attentionName=self.attentionName, inputSeqLen=inputSeqLen, hiddenNoduleNumbers=256)
         predict = self.predict(input=attentionResult)
-        return predict, attentionHotMap
+        return predict, attentionHotMap, attentionResult
 
 
 class BLSTMwAttention_ClassificationSingle_Text(AttentionBase):
@@ -37,7 +37,7 @@ class BLSTMwAttention_ClassificationSingle_Text(AttentionBase):
         attentionResult, attentionHotMap = self.ApplyAttention(
             dataInput=rnnOutput, attentionName=self.attentionName, inputSeqLen=inputSeqLen, hiddenNoduleNumbers=256)
         predict = self.predict(input=attentionResult)
-        return predict, attentionHotMap
+        return predict, attentionHotMap, attentionResult
 
 
 if __name__ == '__main__':

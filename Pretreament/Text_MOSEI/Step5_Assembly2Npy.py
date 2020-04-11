@@ -2,7 +2,7 @@ import os
 import numpy
 
 if __name__ == '__main__':
-    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/TextPart/Step4_SeparateFold/'
+    dataPath = 'D:/PythonProjects_Data/CMU_MOSEI/TextPart/Step4SAME_SeparateFold/'
     labelPath = 'D:/PythonProjects_Data/CMU_MOSEI/Step1_StartEndCut/'
     savePath = 'D:/PythonProjects_Data/CMU_MOSEI/Data_Text/'
     if not os.path.exists(savePath): os.makedirs(savePath)
