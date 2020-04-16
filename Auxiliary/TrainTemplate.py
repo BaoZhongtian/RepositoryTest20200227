@@ -66,8 +66,9 @@ def TrainTemplate_FluctuateLength_Regression(Model, trainDataset, testDataset, s
         print('\nL1 Distance = %.2f' % (numpy.average(numpy.abs(numpy.subtract(testPredict, testLabel)))))
 
 
-def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDataset, savePath, weight=None, cudaFlag=True,
-                                                 saveFlag=True, learningRate=1E-3, episodeNumber=100):
+def TrainTemplate_FluctuateLength_Classification(
+        Model, trainDataset, testDataset, savePath, weight=None, cudaFlag=True, saveFlag=True, learningRate=1E-3,
+        episodeNumber=100, frozenTrainDataset=None):
     if os.path.exists(savePath): return
     os.makedirs(savePath)
     os.makedirs(savePath + '-TestResult')
@@ -130,6 +131,32 @@ def TrainTemplate_FluctuateLength_Classification(Model, trainDataset, testDatase
                 file.write(str(testLabel[indexX]) + '\n')
 
         # print('\nPrecision = %.2f' % numpy.sum(testLabel == numpy.argmax(testPredict, axis=1)) / len(testLabel) * 100)
+
+        if frozenTrainDataset is None: continue
+        print('Middle Result Generation')
+        trainAttentionResult, testAttentionResult = [], []
+        for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(frozenTrainDataset):
+            if cudaFlag:
+                batchData = batchData.cuda()
+                batchSeq = batchSeq.cuda()
+            testLabel.extend(batchLabel.numpy())
+
+            _, _, attentionResult = Model(inputData=batchData, inputSeqLen=batchSeq)
+            attentionResult = attentionResult.cpu().detach().numpy()
+            trainAttentionResult.extend(attentionResult)
+            print('\rTraining %d' % batchNumber, end='')
+        for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(testDataset):
+            if cudaFlag:
+                batchData = batchData.cuda()
+                batchSeq = batchSeq.cuda()
+            testLabel.extend(batchLabel.numpy())
+
+            _, _, attentionResult = Model(inputData=batchData, inputSeqLen=batchSeq)
+            attentionResult = attentionResult.cpu().detach().numpy()
+            testAttentionResult.extend(attentionResult)
+            print('\rTesting %d' % batchNumber, end='')
+        numpy.save(file=os.path.join(savePath, 'TrainMiddle-%04d.npy' % episode), arr=trainAttentionResult)
+        numpy.save(file=os.path.join(savePath, 'TestMiddle-%04d.npy' % episode), arr=testAttentionResult)
 
 
 def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset, testDataset, savePath, weight=None,
@@ -206,7 +233,8 @@ def TrainTemplate_AttentionMapGeneration(Model, trainDataset, frozenTrainDataset
 
 
 def TrainTemplate_AttentionTransform(Model, trainDataset, testDataset, savePath, attentionWeight, weight=None,
-                                     cudaFlag=True, saveFlag=True, learningRate=1E-3, episodeNumber=100):
+                                     cudaFlag=True, saveFlag=True, learningRate=1E-3, episodeNumber=100,
+                                     frozenTrainDataset=None):
     if os.path.exists(savePath): return
     os.makedirs(savePath)
     os.makedirs(savePath + '-TestResult')
@@ -272,7 +300,7 @@ def TrainTemplate_AttentionTransform(Model, trainDataset, testDataset, savePath,
                 batchSeq = batchSeq.cuda()
             testLabel.extend(batchLabel.numpy())
 
-            result, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
+            result, _, _ = Model(inputData=batchData, inputSeqLen=batchSeq)
             result = result.cpu().detach().numpy()
             testPredict.extend(result)
             print('\rTesting %d' % batchNumber, end='')
@@ -284,3 +312,29 @@ def TrainTemplate_AttentionTransform(Model, trainDataset, testDataset, savePath,
                 file.write(str(testLabel[indexX]) + '\n')
 
         # print('\nPrecision = %.2f' % numpy.sum(testLabel == numpy.argmax(testPredict, axis=1)) / len(testLabel) * 100)
+
+        if frozenTrainDataset is None: continue
+        print('Middle Result Generation')
+        trainAttentionResult, testAttentionResult = [], []
+        for batchNumber, (batchData, batchSeq, batchLabel, anotherMap) in enumerate(frozenTrainDataset):
+            if cudaFlag:
+                batchData = batchData.cuda()
+                batchSeq = batchSeq.cuda()
+            testLabel.extend(batchLabel.numpy())
+
+            _, _, attentionResult = Model(inputData=batchData, inputSeqLen=batchSeq)
+            attentionResult = attentionResult.cpu().detach().numpy()
+            trainAttentionResult.extend(attentionResult)
+            print('\rTraining %d' % batchNumber, end='')
+        for batchNumber, (batchData, batchSeq, batchLabel, anotherMap) in enumerate(testDataset):
+            if cudaFlag:
+                batchData = batchData.cuda()
+                batchSeq = batchSeq.cuda()
+            testLabel.extend(batchLabel.numpy())
+
+            _, _, attentionResult = Model(inputData=batchData, inputSeqLen=batchSeq)
+            attentionResult = attentionResult.cpu().detach().numpy()
+            testAttentionResult.extend(attentionResult)
+            print('\rTesting %d' % batchNumber, end='')
+        numpy.save(file=os.path.join(savePath, 'TrainMiddle-%04d.npy' % episode), arr=trainAttentionResult)
+        numpy.save(file=os.path.join(savePath, 'TestMiddle-%04d.npy' % episode), arr=testAttentionResult)

@@ -163,6 +163,8 @@ def Loader_Text(batchSize=32):
     return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
                                        collate_fn=Collate_FluctuateLen_Regression(dimensionOneFlag=True)), \
            torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_FluctuateLen_Regression(dimensionOneFlag=True)), \
+           torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=False,
                                        collate_fn=Collate_FluctuateLen_Regression(dimensionOneFlag=True))
 
 
@@ -238,21 +240,69 @@ def Loader_AttentionTransform(appointPart, appointAttention, batchSize=32):
     trainAttentionHotMap = numpy.load(file=os.path.join(attentionPath, 'TrainAttentionHotMap.npy'), allow_pickle=True)
     testAttentionHotMap = numpy.load(file=os.path.join(attentionPath, 'TestAttentionHotMap.npy'), allow_pickle=True)
     print(numpy.shape(trainAttentionHotMap), numpy.shape(testAttentionHotMap))
-    for index in range(10):
-        print(numpy.shape(trainData[index]), numpy.shape(trainAttentionHotMap[index]))
-    exit()
+    # for index in range(10):
+    #     print(numpy.shape(trainData[index]), numpy.shape(trainAttentionHotMap[index]))
+    # exit()
     trainDataset = Dataset_AttentionTransform(data=trainData, label=trainLabel, attentionHotMap=trainAttentionHotMap)
     testDataset = Dataset_AttentionTransform(data=testData, label=testLabel, attentionHotMap=testAttentionHotMap)
 
     return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
                                        collate_fn=Collate_AttentionTransform()), \
            torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_AttentionTransform()), \
+           torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=False,
                                        collate_fn=Collate_AttentionTransform())
 
 
+#################################################
+class Collate_Classification:
+    def __init__(self):
+        pass
+
+    def __collate(self, batch):
+        xs = torch.FloatTensor([v[0] for v in batch])
+        ys = torch.IntTensor([v[1] for v in batch])
+        return xs, torch.zeros(xs.size()[0]), ys
+
+    def __call__(self, batch):
+        return self.__collate(batch=batch)
+
+
+def Loader_MultiModal_Single(appointPart, batchSize=32):
+    loadPath = 'D:/PythonProjects_Data/AttentionMiddleState-Current/'
+    trainData, testData = [], []
+    trainLabel = numpy.load(os.path.join(loadPath, 'train-Label.npy'))
+    validLabel = numpy.load(os.path.join(loadPath, 'valid-Label.npy'))
+    testLabel = numpy.load(os.path.join(loadPath, 'test-Label.npy'))
+    trainLabel = numpy.concatenate([trainLabel, validLabel])
+
+    for appointName in appointPart:
+        currentTrainData = numpy.load(os.path.join(loadPath, appointName, 'TrainMiddle-0099.npy'))
+        currentTestData = numpy.load(os.path.join(loadPath, appointName, 'TestMiddle-0099.npy'))
+        print(numpy.shape(currentTrainData), numpy.shape(currentTestData))
+        if len(trainData) != 0:
+            trainData = numpy.concatenate([trainData, currentTrainData], axis=1)
+            testData = numpy.concatenate([testData, currentTestData], axis=1)
+        else:
+            trainData = currentTrainData
+            testData = currentTestData
+
+    print(numpy.shape(trainLabel), numpy.shape(testLabel))
+    print(numpy.shape(trainData), numpy.shape(testData))
+
+    trainDataset = Dataset_General(data=trainData, label=trainLabel)
+    testDataset = Dataset_General(data=testData, label=testLabel)
+    return torch_utils_data.DataLoader(dataset=trainDataset, batch_size=batchSize, shuffle=True,
+                                       collate_fn=Collate_Classification()), \
+           torch_utils_data.DataLoader(dataset=testDataset, batch_size=batchSize, shuffle=False,
+                                       collate_fn=Collate_Classification())
+
+
 if __name__ == '__main__':
-    Loader_AttentionTransform(appointPart='Video', appointAttention='StandardAttention')
-    # for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
-    #     print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
-    #     # print(batchLabel)
-    #     # exit()
+    trainDataset, testDataset = Loader_MultiModal_Single(
+        appointPart=['Audio-1/BLSTM-W-StandardAttention-10', 'Audio-1/BLSTM-W-LocalAttention-10',
+                     'Audio-1/BLSTM-W-MonotonicAttention-10'])
+    for batchNumber, (batchData, batchSeq, batchLabel) in enumerate(trainDataset):
+        print(numpy.shape(batchData), numpy.shape(batchSeq), numpy.shape(batchLabel))
+        # print(batchLabel)
+        # exit()

@@ -4,12 +4,12 @@ from Model.BLSTMwAttention_Classification import BLSTMwAttention_ClassificationS
 
 if __name__ == '__main__':
     cudaFlag = True
-    appointPart = 'Audio'
+    appointPart = 'Video'
     for attentionWeight in [1, 5, 10, 50, 100]:
         for attentionName in ['StandardAttention', 'LocalAttention', 'MonotonicAttention']:
-            trainDataset, testDataset = Loader_AttentionTransform(batchSize=16, appointPart=appointPart,
-                                                                  appointAttention=attentionName)
-            exit()
+            trainDataset, testDataset, frozenDataset = Loader_AttentionTransform(batchSize=16, appointPart=appointPart,
+                                                                                 appointAttention=attentionName)
+            # exit()
             Model = BLSTMwAttention_ClassificationSingle(attentionName=attentionName, attentionScope=10,
                                                          featuresNumber=35, classNumber=2, cudaFlag=cudaFlag)
 
@@ -18,4 +18,4 @@ if __name__ == '__main__':
 
             TrainTemplate_AttentionTransform(
                 Model=Model, trainDataset=trainDataset, testDataset=testDataset, savePath=savePath,
-                cudaFlag=cudaFlag, saveFlag=False, attentionWeight=10)
+                cudaFlag=cudaFlag, saveFlag=False, attentionWeight=10, frozenTrainDataset=frozenDataset)

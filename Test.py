@@ -1,12 +1,15 @@
 import os
-import numpy
+import shutil
 
 if __name__ == '__main__':
-    loadPath = r'D:\PythonProjects_Data\CMU_MOSEI\TextPart\Step4_SeparateFold'
-    for fold in os.listdir(loadPath):
-        for fileName in os.listdir(os.path.join(loadPath, fold)):
-            data = numpy.genfromtxt(fname=os.path.join(loadPath, fold, fileName), dtype=int, delimiter=',')
-            print(data)
-            print(fold, fileName)
-            print(numpy.min(data))
-            exit()
+    loadPath = '/home/bztbztbzt/CMU-MOSEI-Result/AttentionMiddleState/'
+    savePath = '/home/bztbztbzt/CMU-MOSEI-Result/AttentionMiddleState-Current/'
+    for foldName in os.listdir(loadPath):
+        for partName in os.listdir(os.path.join(loadPath, foldName)):
+            print(foldName, partName)
+            if partName.find('TestResult') != -1: continue
+            os.makedirs(os.path.join(savePath, foldName, partName))
+            shutil.copy(os.path.join(loadPath, foldName, partName, 'TrainMiddle-0099.npy'),
+                        os.path.join(savePath, foldName, partName, 'TrainMiddle-0099.npy'))
+            shutil.copy(os.path.join(loadPath, foldName, partName, 'TestMiddle-0099.npy'),
+                        os.path.join(savePath, foldName, partName, 'TestMiddle-0099.npy'))

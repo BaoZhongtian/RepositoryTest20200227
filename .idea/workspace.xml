@@ -6,15 +6,9 @@
       <change beforePath="$PROJECT_DIR$/Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auxiliary/Loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auxiliary/Loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auxiliary/TrainTemplate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Auxiliary/TrainTemplate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step5_Normalization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step5_Normalization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step6_Assembly2Npy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step6_Assembly2Npy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/StepEX_CopyPart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/StepEX_CopyPart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step5_Assembly2Npy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step5_Assembly2Npy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step4_Normalization.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step4_Normalization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step5_Assembly2Npy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step5_Assembly2Npy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Train/Exp_AttentionTransform.py" beforeDir="false" afterPath="$PROJECT_DIR$/Train/Exp_AttentionTransform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Train/Exp_Text_Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Train/Exp_Text_Classification.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,27 +21,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Auxiliary/Loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6751">
-              <caret line="251" selection-start-line="251" selection-end-line="251" />
+            <state relative-caret-position="452">
+              <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#130#1339#0" />
-                <element signature="e#1389#2366#0" />
-                <element signature="e#2422#2638#0" />
                 <element signature="e#2740#4293#0" />
                 <element signature="e#4360#4661#0" />
+                <element signature="e#4762#6247#0" />
+                <element signature="e#6285#8021#0" />
+                <element signature="e#8073#9575#0" />
+                <element signature="e#11402#13898#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Analysis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py">
+        <entry file="file://$PROJECT_DIR$/Model/MultiModalFusion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="387">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="25" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Train/Exp_MultiModal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Train/Exp_Audio_Classification.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="14" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+            <state relative-caret-position="1161">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="81" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -65,38 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Auxiliary/TrainTemplate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="208" column="51" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Analysis.py">
+        <entry file="file://$PROJECT_DIR$/Model/AttentionBase.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -113,6 +115,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>\</find>
+      <find>= Model</find>
+      <find>128</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -152,14 +156,10 @@
         <option value="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step2_SaveSamePart.py" />
         <option value="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step3_DictionaryGeneration.py" />
         <option value="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step4_SeparateFold.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/Train/Exp_Text_Classification.py" />
         <option value="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step4_SpectrumGeneration.py" />
         <option value="$PROJECT_DIR$/Pretreament/Video_MOSEI/StepEX_CopyPart.py" />
         <option value="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step2_VideoCut.py" />
         <option value="$PROJECT_DIR$/Train/Exp_Video_Classification.py" />
-        <option value="$PROJECT_DIR$/Analysis.py" />
-        <option value="$PROJECT_DIR$/Train/Exp_AttentionTransform.py" />
         <option value="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step1_ChooseTheSamePart.py" />
         <option value="$PROJECT_DIR$/Pretreament/StepEX_Rename.py" />
         <option value="$PROJECT_DIR$/Pretreament/StepEX_CopyPart.py" />
@@ -168,10 +168,16 @@
         <option value="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step5_Assembly2Npy.py" />
         <option value="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step5_Assembly2Npy.py" />
         <option value="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step6_Assembly2Npy.py" />
-        <option value="$PROJECT_DIR$/Auxiliary/Loader.py" />
         <option value="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py" />
         <option value="$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py" />
+        <option value="$PROJECT_DIR$/Train/Exp_AttentionTransform.py" />
+        <option value="$PROJECT_DIR$/Train/Exp_Text_Classification.py" />
         <option value="$PROJECT_DIR$/Auxiliary/TrainTemplate.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/Model/MultiModalFusion.py" />
+        <option value="$PROJECT_DIR$/Train/Exp_MultiModal.py" />
+        <option value="$PROJECT_DIR$/Auxiliary/Loader.py" />
+        <option value="$PROJECT_DIR$/Analysis.py" />
       </list>
     </option>
   </component>
@@ -210,25 +216,7 @@
             <path>
               <item name="RepositoryTest20200227" type="b2602c69:ProjectViewProjectNode" />
               <item name="RepositoryTest20200227" type="462c0819:PsiDirectoryNode" />
-              <item name="Pretreament" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RepositoryTest20200227" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RepositoryTest20200227" type="462c0819:PsiDirectoryNode" />
-              <item name="Pretreament" type="462c0819:PsiDirectoryNode" />
-              <item name="Audio&amp;Video_MOSEI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RepositoryTest20200227" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RepositoryTest20200227" type="462c0819:PsiDirectoryNode" />
-              <item name="Pretreament" type="462c0819:PsiDirectoryNode" />
-              <item name="Text_MOSEI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RepositoryTest20200227" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RepositoryTest20200227" type="462c0819:PsiDirectoryNode" />
-              <item name="Pretreament" type="462c0819:PsiDirectoryNode" />
-              <item name="Video_MOSEI" type="462c0819:PsiDirectoryNode" />
+              <item name="Train" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -268,7 +256,73 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Step3_ShrinkAttention">
+  <component name="RunManager" selected="Python.Analysis">
+    <configuration name="Analysis" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+      <module name="RepositoryTest20200227" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Exp_MultiModal" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+      <module name="RepositoryTest20200227" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Train" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Train/Exp_MultiModal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Exp_Text_Classification" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+      <module name="RepositoryTest20200227" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Train" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Train/Exp_Text_Classification.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Loader" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="RepositoryTest20200227" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -291,7 +345,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Step3_ShrinkAttention" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
+    <configuration name="MultiModalFusion" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="RepositoryTest20200227" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -299,78 +353,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Step5_Assembly2Npy (1)" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="RepositoryTest20200227" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pretreament/Video_MOSEI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pretreament/Video_MOSEI/Step5_Assembly2Npy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Step5_Assembly2Npy" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="RepositoryTest20200227" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pretreament/Text_MOSEI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pretreament/Text_MOSEI/Step5_Assembly2Npy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Step6_Assembly2Npy" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="RepositoryTest20200227" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\19429\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pretreament/Audio_MOSEI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step6_Assembly2Npy.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Model/MultiModalFusion.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -402,19 +390,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Step5_Assembly2Npy" />
-      <item itemvalue="Python.Step5_Assembly2Npy (1)" />
-      <item itemvalue="Python.Step6_Assembly2Npy" />
+      <item itemvalue="Python.Analysis" />
+      <item itemvalue="Python.Exp_Text_Classification" />
       <item itemvalue="Python.Loader" />
-      <item itemvalue="Python.Step3_ShrinkAttention" />
+      <item itemvalue="Python.MultiModalFusion" />
+      <item itemvalue="Python.Exp_MultiModal" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Step3_ShrinkAttention" />
+        <item itemvalue="Python.Analysis" />
+        <item itemvalue="Python.Exp_MultiModal" />
+        <item itemvalue="Python.MultiModalFusion" />
         <item itemvalue="Python.Loader" />
-        <item itemvalue="Python.Step6_Assembly2Npy" />
-        <item itemvalue="Python.Step5_Assembly2Npy (1)" />
-        <item itemvalue="Python.Step5_Assembly2Npy" />
+        <item itemvalue="Python.Exp_Text_Classification" />
       </list>
     </recent_temporary>
   </component>
@@ -466,12 +454,19 @@
       <workItem from="1586226935751" duration="631000" />
       <workItem from="1586320581084" duration="2041000" />
       <workItem from="1586399495618" duration="9291000" />
-      <workItem from="1586576395681" duration="2019000" />
+      <workItem from="1586576395681" duration="6046000" />
+      <workItem from="1586604753662" duration="835000" />
+      <workItem from="1586660609048" duration="2234000" />
+      <workItem from="1586748698265" duration="4139000" />
+      <workItem from="1586831133544" duration="1913000" />
+      <workItem from="1586833728702" duration="665000" />
+      <workItem from="1586925036571" duration="4553000" />
+      <workItem from="1587020546962" duration="1489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200551000" />
+    <option name="totallyTimeSpent" value="220406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -483,15 +478,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.20522387" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.20735608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36984816" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36984816" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -519,7 +513,7 @@
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step2_VideoCut.coverage" NAME="Step2_VideoCut Coverage Results" MODIFIED="1585114578003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Video_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step5_Normalization.coverage" NAME="Step5_Normalization Coverage Results" MODIFIED="1586402519502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step3_ShrinkAttention.coverage" NAME="Step3_ShrinkAttention Coverage Results" MODIFIED="1586441525701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI" />
-    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Analysis.coverage" NAME="Analysis Coverage Results" MODIFIED="1586069716277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Analysis.coverage" NAME="Analysis Coverage Results" MODIFIED="1587021745736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step2_LoadLabelCSD.coverage" NAME="Step2_LoadLabelCSD Coverage Results" MODIFIED="1582799561979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step2_SpectrumGeneration.coverage" NAME="Step2_SpectrumGeneration Coverage Results" MODIFIED="1582809953112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio_MOSI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$TrainTemplate.coverage" NAME="TrainTemplate Coverage Results" MODIFIED="1584338629676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Auxiliary" />
@@ -527,13 +521,14 @@
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step1_ChooseTheSamePart.coverage" NAME="Step1_ChooseTheSamePart Coverage Results" MODIFIED="1585193131936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$BLSTMwAttention_Classification.coverage" NAME="BLSTMwAttention_Classification Coverage Results" MODIFIED="1585817382193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step5_Assembly2Npy.coverage" NAME="Step5_Assembly2Npy Coverage Results" MODIFIED="1586402630631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Text_MOSEI" />
-    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Loader.coverage" NAME="Loader Coverage Results" MODIFIED="1586440704360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Auxiliary" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Loader.coverage" NAME="Loader Coverage Results" MODIFIED="1586937373029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Auxiliary" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step3_SpectrumGeneration.coverage" NAME="Step3_SpectrumGeneration Coverage Results" MODIFIED="1583828635989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio_MOSEI" />
-    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_Text_Classification.coverage" NAME="Exp_Text_Classification Coverage Results" MODIFIED="1585817595122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_Text_Classification.coverage" NAME="Exp_Text_Classification Coverage Results" MODIFIED="1586661966804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$MultiModalFusion.coverage" NAME="MultiModalFusion Coverage Results" MODIFIED="1586938203349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step5_Assembly2Npy__1_.coverage" NAME="Step5_Assembly2Npy (1) Coverage Results" MODIFIED="1586403451409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Video_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$StepEX_Rename.coverage" NAME="StepEX_Rename Coverage Results" MODIFIED="1586401292663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_Audio_Classification.coverage" NAME="Exp_Audio_Classification Coverage Results" MODIFIED="1584845558615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
-    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Test.coverage" NAME="Test Coverage Results" MODIFIED="1585817282893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Test.coverage" NAME="Test Coverage Results" MODIFIED="1586587754953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_AttentionTransformPretreatment.coverage" NAME="Exp_AttentionTransformPretreatment Coverage Results" MODIFIED="1585370768273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step4_Normalization.coverage" NAME="Step4_Normalization Coverage Results" MODIFIED="1586402586751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Video_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step1_StartEndCut.coverage" NAME="Step1_StartEndCut Coverage Results" MODIFIED="1584936343578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Video_MOSEI" />
@@ -542,8 +537,9 @@
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step4_SpectrumGeneration.coverage" NAME="Step4_SpectrumGeneration Coverage Results" MODIFIED="1585973159572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step4_SeparateFold.coverage" NAME="Step4_SeparateFold Coverage Results" MODIFIED="1585815346991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Text_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$BLSTMwAttention.coverage" NAME="BLSTMwAttention Coverage Results" MODIFIED="1583982236465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
-    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_AttentionTransform.coverage" NAME="Exp_AttentionTransform Coverage Results" MODIFIED="1586321940943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_AttentionTransform.coverage" NAME="Exp_AttentionTransform Coverage Results" MODIFIED="1586586089823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_Audio.coverage" NAME="Exp_Audio Coverage Results" MODIFIED="1584000677169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
+    <SUITE FILE_PATH="coverage/RepositoryTest20200227$Exp_MultiModal.coverage" NAME="Exp_MultiModal Coverage Results" MODIFIED="1586938531330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Train" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step2_SaveSamePart.coverage" NAME="Step2_SaveSamePart Coverage Results" MODIFIED="1585808886088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Text_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step6_Assembly2Npy.coverage" NAME="Step6_Assembly2Npy Coverage Results" MODIFIED="1586406618760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio_MOSEI" />
     <SUITE FILE_PATH="coverage/RepositoryTest20200227$Step2_Assembly2Npy.coverage" NAME="Step2_Assembly2Npy Coverage Results" MODIFIED="1585404848716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI" />
@@ -594,20 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="2140" selection-start-line="2140" selection-end-line="2140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/AttentionBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#2382#2648#0" />
-            <element signature="e#2733#3533#0" />
-            <element signature="e#3615#4900#0" />
-            <element signature="e#4986#6163#0" />
-            <element signature="e#6249#7871#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,16 +661,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI.py" />
-    <entry file="file://$PROJECT_DIR$/Train/Exp_AttentionTransformPretreatment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="6" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step2_Assembly2Npy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
@@ -741,23 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Train/Exp_Audio_Classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Train/Exp_Text_Classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pretreament/Audio_MOSEI/Step4_SpectrumGeneration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -791,16 +746,6 @@
           <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Train/Exp_AttentionTransform.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,37 +821,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Auxiliary/Loader.py">
+    <entry file="file://$PROJECT_DIR$/Train/Exp_AttentionTransform.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6751">
-          <caret line="251" selection-start-line="251" selection-end-line="251" />
+        <state relative-caret-position="301">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#130#1339#0" />
-            <element signature="e#1389#2366#0" />
-            <element signature="e#2422#2638#0" />
-            <element signature="e#2740#4293#0" />
-            <element signature="e#4360#4661#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,27 +834,125 @@
     <entry file="file://$PROJECT_DIR$/Pretreament/Audio&amp;Video_MOSEI/Step3_ShrinkAttention.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py">
+    <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+          <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda3/Lib/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/Exp_AttentionTransformPretreatment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/Exp_Text_Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda3/Lib/site-packages/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="540" selection-start-line="540" selection-end-line="540" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auxiliary/TrainTemplate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1199">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Auxiliary/Loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="265" lean-forward="true" selection-start-line="265" selection-end-line="265" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#130#1339#0" />
+            <element signature="e#2740#4293#0" />
+            <element signature="e#4360#4661#0" />
+            <element signature="e#4762#6247#0" />
+            <element signature="e#6285#8021#0" />
+            <element signature="e#8073#9575#0" />
+            <element signature="e#11402#13898#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/MultiModalFusion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="25" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Auxiliary/TrainTemplate.py">
+    <entry file="file://$PROJECT_DIR$/Train/Exp_MultiModal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="208" column="51" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="51" />
+        <state relative-caret-position="430">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Train/Exp_Audio_Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="14" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/BLSTMwAttention_Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/AttentionBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
