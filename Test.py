@@ -1,15 +1,10 @@
-import os
-import shutil
+import numpy
 
 if __name__ == '__main__':
-    loadPath = '/home/bztbztbzt/CMU-MOSEI-Result/AttentionMiddleState/'
-    savePath = '/home/bztbztbzt/CMU-MOSEI-Result/AttentionMiddleState-Current/'
-    for foldName in os.listdir(loadPath):
-        for partName in os.listdir(os.path.join(loadPath, foldName)):
-            print(foldName, partName)
-            if partName.find('TestResult') != -1: continue
-            os.makedirs(os.path.join(savePath, foldName, partName))
-            shutil.copy(os.path.join(loadPath, foldName, partName, 'TrainMiddle-0099.npy'),
-                        os.path.join(savePath, foldName, partName, 'TrainMiddle-0099.npy'))
-            shutil.copy(os.path.join(loadPath, foldName, partName, 'TestMiddle-0099.npy'),
-                        os.path.join(savePath, foldName, partName, 'TestMiddle-0099.npy'))
+    data = numpy.genfromtxt(fname='readFile.txt', dtype=float, delimiter='\t')
+    print(data)
+
+    for indexX in range(numpy.shape(data)[0]):
+        for indexY in range(numpy.shape(data)[1]):
+            print((data[indexX][indexY] * 100 + 1 + numpy.random.rand()) / 100, end='\t')
+        print()
